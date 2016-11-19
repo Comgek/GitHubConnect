@@ -12,14 +12,16 @@ namespace GitHubConnect
     {
         public static void Main(string[] args)
         {
-            var client = new RestClient("http://github.com");
-            var request = new RestRequest("/repos/codercampsjosh/FirstGitHub/blob/master/app.js");
+            var client = new RestClient("https://raw.githubusercontent.com");
+            var request = new RestRequest("/codercampsjosh/FirstGitHub/master/app.js");
 
             var result = client.ExecuteAsync(request, response =>
             {
                 Console.WriteLine(response.Content);
-            });
+            }); 
 
+
+            
             Console.ReadLine();
         }
     }
